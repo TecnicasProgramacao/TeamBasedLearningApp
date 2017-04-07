@@ -3,10 +3,40 @@ import { connect } from 'react-redux';
 
 
 class GroupAnswering extends Component {
-  render() {
-    console.log(this.props.questionList);
+
+  renderQuestionAlternative(question) {
+    return question.alternatives.map( (alternative) => {
+      return (
+        <div
+          key={alternative.alternativeDescription}
+        >
+          {alternative.alternativeDescription}
+        </div>
+      )
+    })
+  }
+
+renderQuestions() {
+  const questions = this.props.questionList[0].questions;
+  return questions.map( (question) => {
     return (
-      <h1>Hello Group!</h1>
+      <li
+        key={question.description}
+      >
+        <h5>{question.description}</h5>
+        <br />
+        {this.renderQuestionAlternative(question)}
+      </li>
+    );
+  })
+
+}
+
+  render() {
+    return (
+      <ul>
+        {this.renderQuestions()}
+      </ul>
     );
   }
 }
@@ -18,7 +48,7 @@ function mapStateToProps(state) {
 }
 
 GroupAnswering.propTypes = {
-  questionList: React.PropTypes.object.isRequired,
+  questionList: React.PropTypes.array.isRequired,
 };
 
 export default connect(mapStateToProps)(GroupAnswering);
