@@ -5,32 +5,45 @@ import { connect } from 'react-redux';
 class GroupAnswering extends Component {
 
   renderQuestionAlternative(question) {
-    return question.alternatives.map( (alternative) => {
+    return question.alternatives.map((alternative) => {
       return (
         <div
+          className="card-action grey lighten-3"
           key={alternative.alternativeDescription}
         >
-          {alternative.alternativeDescription}
+          <a
+            href=""
+            className="black-text"
+          >
+            {alternative.alternativeDescription}
+          </a>
         </div>
-      )
-    })
+      );
+    });
   }
 
-renderQuestions() {
-  const questions = this.props.questionList[0].questions;
-  return questions.map( (question) => {
-    return (
-      <li
-        key={question.description}
-      >
-        <h5>{question.description}</h5>
-        <br />
-        {this.renderQuestionAlternative(question)}
-      </li>
-    );
-  })
-
-}
+  renderQuestions() {
+    const questions = this.props.questionList[0].questions;
+    return questions.map((question) => {
+      return (
+        <div
+          className="card grey lighten-1"
+          key={question.description}
+        >
+          <div
+            className="card-content white-text"
+          >
+            <div
+              className="card-title"
+            >
+              {question.description}
+            </div>
+          </div>
+          {this.renderQuestionAlternative(question)}
+        </div>
+      );
+    });
+  }
 
   render() {
     return (
