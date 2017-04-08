@@ -11,18 +11,5 @@
     "arrow-body-style": ["error", "never"],
     "react/forbid-prop-types": [1, { "forbid": [<string>] }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "valid-jsdoc": ["error", {
-      "requireReturn": true,
-      "requireReturnType": true,
-      "requireParamDescription": true,
-      "requireReturnDescription": true
-    }],
-    "require-jsdoc": ["error", {
-        "require": {
-            "FunctionDeclaration": true,
-            "MethodDefinition": true,
-            "ClassDeclaration": true
-        }
-    }]
   }
 }

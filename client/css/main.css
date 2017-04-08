@@ -1,0 +1,12 @@
+
+.card-content {
+  background-color: #696969;
+}
+
+.card-action {
+  background-color: #e0e0e0;
+}
+
+.card-action:hover {
+  background-color: #eeeeee;
+}

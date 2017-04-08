@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CardList from './cards/cardList';
 
-class QuestionList extends Component {
-
+class GroupAnswering extends Component {
 
   render() {
     return (
@@ -18,4 +17,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(QuestionList);
+GroupAnswering.propTypes = {
+  questionList: React.PropTypes.array.isRequired,
+};
+
+export default connect(mapStateToProps)(GroupAnswering);
