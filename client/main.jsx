@@ -1,3 +1,11 @@
+/**
+* This file is where the Meteor startup and the providers is rendered.
+*
+* @summary Meteor startup.
+*
+* @link /
+*/
+
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
