@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import AccountsUI from './accountsUI.js';
+import AccountsUI from './accountsUI';
 
 class NavBar extends Component {
 

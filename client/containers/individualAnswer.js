@@ -9,13 +9,13 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CardList from './cards/cardList';
+import QuestionList from './questions/questionList';
 
-class IndividualAnswering extends Component {
+class IndividualAnswer extends Component {
 
   render() {
     return (
-      <CardList />
+      <QuestionList />
     );
   }
 }
@@ -26,8 +26,8 @@ function mapStateToProps(state) {
   };
 }
 
-IndividualAnswering.propTypes = {
+IndividualAnswer.propTypes = {
   questionList: React.PropTypes.array.isRequired,
 };
 
-export default connect(mapStateToProps)(IndividualAnswering);
+export default connect(mapStateToProps)(IndividualAnswer);
