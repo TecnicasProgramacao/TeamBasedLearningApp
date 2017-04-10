@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import QuestionList from '../containers/questionList';
 import NavBar from './navbar';
 
 class App extends Component {
