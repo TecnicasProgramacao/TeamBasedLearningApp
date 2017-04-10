@@ -4,7 +4,7 @@ node_js:
   - "7"
 
 before_script:
-  - "curl https://install.meteor.com | /bin/sh"  
+  - "curl https://install.meteor.com | /bin/sh"
 script:
   - "meteor add dispatch:mocha"
   - "meteor test --once --driver-package dispatch:mocha"

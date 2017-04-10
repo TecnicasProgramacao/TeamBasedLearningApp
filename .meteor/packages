@@ -21,3 +21,4 @@ peerlibrary:assert
 meteortoys:allthings
 accounts-ui
 accounts-password
+dispatch:mocha
