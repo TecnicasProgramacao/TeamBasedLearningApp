@@ -8,7 +8,6 @@
 */
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import QuestionList from './questions/questionList';
 
 class IndividualAnswer extends Component {
@@ -20,14 +19,4 @@ class IndividualAnswer extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    questionList: state.questionList,
-  };
-}
-
-IndividualAnswer.propTypes = {
-  questionList: React.PropTypes.array.isRequired,
-};
-
-export default connect(mapStateToProps)(IndividualAnswer);
+export default (IndividualAnswer);

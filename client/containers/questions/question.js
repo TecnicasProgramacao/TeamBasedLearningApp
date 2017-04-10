@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import QuestionAlternatives from './questionAlternatives';
 import './question.css';
 
 class Question extends Component {
@@ -38,7 +39,7 @@ class Question extends Component {
               {question.description}
             </div>
           </div>
-          {Question.renderQuestionAlternative(question)}
+          <QuestionAlternatives questionAlternatives={question.alternatives} />
         </div>
       );
     });
