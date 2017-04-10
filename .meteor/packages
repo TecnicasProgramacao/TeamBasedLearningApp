@@ -19,6 +19,6 @@ shell-server@0.2.3            # Server-side component of the `meteor shell` comm
 
 peerlibrary:assert
 meteortoys:allthings
+dispatch:mocha
 accounts-ui
 accounts-password
-dispatch:mocha
