@@ -20,6 +20,8 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 
 Meteor.startup(() => {
+  // This function allows the database data to be shown in client side
+  Meteor.subscribe('Lists');
 
   render(
     <Provider store={createStoreWithMiddleware(reducers)}>
