@@ -41,6 +41,18 @@ function mapStateToProps(state) {
   };
 }
 
+function filterAvailableQuestions (allQuestions) {
+  var available_questions = [];
+
+  allQuestions.map((question) => {
+    if (question) {
+      available_questions.push(question);
+    }
+  })
+
+  return available_questions;
+}
+
 AvailableCard.propTypes = {
   questionList: React.PropTypes.array.isRequired,
 };
