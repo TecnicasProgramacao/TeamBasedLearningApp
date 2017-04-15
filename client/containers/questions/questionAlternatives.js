@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import './question.css';
+import { connect } from 'react-redux';
+
+require('./style/question.css');
 
 class QuestionAlternatives extends Component {
 
   static renderQuestionAlternative(questionAlternatives) {
     return questionAlternatives.map((alternative) => {
       return (
-        <div
-          className="card-action"
-          key={alternative.alternativeDescription}
-        >
-          <a
-            className="collection-item black-text"
-          >
+        <div className="card-action" key={alternative.alternativeDescription} >
+          <a className="collection-item black-text">
             {alternative.alternativeDescription}
           </a>
         </div>
@@ -30,8 +27,15 @@ class QuestionAlternatives extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    typeOfAnswering: state.typeOfAnswering,
+  };
+}
+
 QuestionAlternatives.propTypes = {
   questionAlternatives: React.PropTypes.array.isRequired,
+  typeOfAnswering: React.PropTypes.string.isRequired,
 };
 
-export default QuestionAlternatives;
+export default connect(mapStateToProps)(QuestionAlternatives);

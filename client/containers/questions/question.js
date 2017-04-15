@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuestionAlternatives from './questionAlternatives';
-import './question.css';
+
+require('./style/question.css');
 
 class Question extends Component {
 
   static renderQuestionAlternative(question) {
     return question.alternatives.map((alternative) => {
       return (
-        <div
-          className="card-action"
-          key={alternative.alternativeDescription}
-        >
-          <a
-            className="collection-item black-text"
-          >
+        <div className="card-action" key={alternative.alternativeDescription} >
+          <a className="collection-item black-text" >
             {alternative.alternativeDescription}
           </a>
         </div>
@@ -26,16 +22,9 @@ class Question extends Component {
     const questions = this.props.questionListData[0].questions;
     return questions.map((question) => {
       return (
-        <div
-          className="card"
-          key={question.description}
-        >
-          <div
-            className="card-content white-text"
-          >
-            <div
-              className="card-title"
-            >
+        <div className="card" key={question.description} >
+          <div className="card-content white-text" >
+            <div className="card-title">
               {question.description}
             </div>
           </div>
