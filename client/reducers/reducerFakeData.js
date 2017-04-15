@@ -1,9 +1,9 @@
 export default function () {
   return [
     {
-      enable: true,
       questions: [
         {
+          available: true,
           description: 'De acordo com o modelo de requisitos do SAFe, um item de backlog pode ser, EXCETO:',
           alternatives: [
             {
@@ -25,6 +25,7 @@ export default function () {
           ],
         },
         {
+          available: false,
           description: 'Sobre o nível de Portifólio, é INCORRETO afirmar:',
           alternatives: [
             {

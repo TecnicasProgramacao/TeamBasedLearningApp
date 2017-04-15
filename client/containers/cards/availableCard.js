@@ -5,7 +5,11 @@ class AvailableCard extends Component {
 
   renderAvailableQuestions() {
     const questions = this.props.questionList[0].questions;
-    return questions.map((question) => {
+    var available_questions = [];
+
+    available_questions = filterAvailableQuestions(questions);
+
+    return available_questions.map((question) => {
       return (
         <div
           className="card"
@@ -45,7 +49,7 @@ function filterAvailableQuestions (allQuestions) {
   var available_questions = [];
 
   allQuestions.map((question) => {
-    if (question) {
+    if (question.available) {
       available_questions.push(question);
     }
   })
