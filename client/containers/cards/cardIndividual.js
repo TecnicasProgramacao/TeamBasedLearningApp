@@ -1,12 +1,21 @@
+/**
+* This file is where the cards for indidual answers is rendered.
+*
+* @summary Individual card container.
+*
+* @link /individual-simulator
+* @class CardIndividual
+*/
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Card extends Component {
+class CardIndividual extends Component {
 
   static renderQuestionAlternative(question) {
     return question.alternatives.map((alternative) => {
       return (
-        <button
+        <div
           className="card-action"
           key={alternative.alternativeDescription}
         >
@@ -15,7 +24,13 @@ class Card extends Component {
           >
             {alternative.alternativeDescription}
           </a>
-        </button>
+          <form id="point-form">
+          Pontos:
+            <input
+              type="number" name="points"
+              min="0" max="4"/>
+          </form>
+        </div>
       );
     });
   }
@@ -37,7 +52,8 @@ class Card extends Component {
               {question.description}
             </div>
           </div>
-          {Card.renderQuestionAlternative(question)}
+          {CardIndividual.renderQuestionAlternative(question)}
+          <input className="button-submit" type="submit" form="point-form"/>
         </div>
       );
     });
@@ -59,8 +75,8 @@ function mapStateToProps(state) {
   };
 }
 
-Card.propTypes = {
+CardIndividual.propTypes = {
   questionList: React.PropTypes.array.isRequired,
 };
 
-export default connect(mapStateToProps)(Card);
+export default connect(mapStateToProps)(CardIndividual);

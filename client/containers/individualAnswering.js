@@ -9,13 +9,13 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CardList from './cards/cardList';
+import CardListIndividual from './cards/cardListIndividual.js';
 
 class IndividualAnswering extends Component {
 
   render() {
     return (
-      <CardList />
+      <CardListIndividual />
     );
   }
 }
