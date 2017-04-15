@@ -15,7 +15,6 @@ import AvailableQuestions from './containers/availableQuestions';
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={QuestionList} />
     <Route path="/group-simulator" component={GroupAnswer} />
     <Route path="/individual-simulator" component={IndividualAnswer} />
     <Route path="/available-questions" component={AvailableQuestions} />

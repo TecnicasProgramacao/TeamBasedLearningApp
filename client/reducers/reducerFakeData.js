@@ -1,6 +1,4 @@
-export default function () {
-  return [
-    {
+const questionList = [{
       title: 'Questionário 01',
       description: 'Questionário para a atividade da aula 01.',
       created_at: 'Apr 14 2017 00:00:00',
@@ -104,5 +102,8 @@ export default function () {
         },
       ],
     }
-  ];
+];
+
+export default function () {
+  return questionList;
 }
