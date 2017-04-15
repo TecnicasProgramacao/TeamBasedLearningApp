@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import QuestionsReducer from './reducerFakeData';
 
 const rootReducer = combineReducers({
-  questionList: QuestionsReducer,
+  questionListData: QuestionsReducer,
 });
 
 export default rootReducer;

@@ -1,12 +1,17 @@
-import React from 'react';
-import QuestionList from '../containers/questionList';
+import React, { Component } from 'react';
+import NavBar from './navbar';
 
-const App = () => {
-  return (
-    <div>
-      <QuestionList />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <NavBar />
+        <div id="main" className="container">
+          {this.props.children}
+        </div>
+      </div>
+    );
+  }
 };
 
 export default App;

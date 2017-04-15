@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import QuestionAlternatives from './questionAlternatives';
+import './question.css';
 
-class Card extends Component {
+class Question extends Component {
 
   static renderQuestionAlternative(question) {
     return question.alternatives.map((alternative) => {
@@ -21,7 +23,7 @@ class Card extends Component {
   }
 
   renderQuestions() {
-    const questions = this.props.questionList[0].questions;
+    const questions = this.props.questionListData[0].questions;
     return questions.map((question) => {
       return (
         <div
@@ -37,7 +39,7 @@ class Card extends Component {
               {question.description}
             </div>
           </div>
-          {Card.renderQuestionAlternative(question)}
+          <QuestionAlternatives questionAlternatives={question.alternatives} />
         </div>
       );
     });
@@ -55,12 +57,12 @@ class Card extends Component {
 
 function mapStateToProps(state) {
   return {
-    questionList: state.questionList,
+    questionListData: state.questionListData,
   };
 }
 
-Card.propTypes = {
-  questionList: React.PropTypes.array.isRequired,
+Question.propTypes = {
+  questionListData: React.PropTypes.array.isRequired,
 };
 
-export default connect(mapStateToProps)(Card);
+export default connect(mapStateToProps)(Question);
