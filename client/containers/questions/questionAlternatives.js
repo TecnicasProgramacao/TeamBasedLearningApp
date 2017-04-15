@@ -6,6 +6,14 @@ require('./style/question.css');
 class QuestionAlternatives extends Component {
 
   static renderQuestionAlternative(questionAlternatives) {
+    if (this.props.typeOfAnswering === 'GA') {
+      QuestionAlternatives.renderGroupAlternatives(questionAlternatives);
+    } else if (this.props.typeOfAnswering === 'IA') {
+      // QuestionAlternatives.renderIndividualAlternatives(questionAlternatives);
+    }
+  }
+
+  static renderGroupAlternatives(questionAlternatives) {
     return questionAlternatives.map((alternative) => {
       return (
         <div className="card-action" key={alternative.alternativeDescription} >
@@ -17,8 +25,23 @@ class QuestionAlternatives extends Component {
     });
   }
 
+  static renderPreLoader(){
+    return (
+      <div className="progress">
+        <div className="indeterminate" />
+      </div>
+    );
+  }
 
+  componentWillMount() {
+    return(
+      <div>
+        {QuestionAlternatives.renderPreLoader()}
+      </div>
+    );
+  }
   render() {
+    console.log(this.props.typeOfAnswering);
     return (
       <div>
         {QuestionAlternatives.renderQuestionAlternative(this.props.questionAlternatives)}
@@ -35,7 +58,6 @@ function mapStateToProps(state) {
 
 QuestionAlternatives.propTypes = {
   questionAlternatives: React.PropTypes.array.isRequired,
-  typeOfAnswering: React.PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps)(QuestionAlternatives);

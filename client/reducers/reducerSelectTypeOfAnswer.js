@@ -1,6 +1,6 @@
 import { SELECT_GROUP_ANSWERING, SELECT_INDIVIDUAL_ANSWERING } from '../actions/index';
 
-export default function (state = '', action) {
+export default function (state = 'EMPTY', action) {
   switch (action.type) {
     case SELECT_GROUP_ANSWERING:
       return action.payload;
