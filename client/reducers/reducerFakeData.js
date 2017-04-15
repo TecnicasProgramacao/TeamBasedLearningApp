@@ -6,7 +6,7 @@ const questionList = [{
       alternatives: [
         {
           alternativeDescription: 'Épico',
-          alternativePoints: 0,
+          alternativePoints: 1,
         },
         {
           alternativeDescription: 'Capacidade(Capability)',
