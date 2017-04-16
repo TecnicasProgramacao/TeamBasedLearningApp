@@ -11,10 +11,12 @@ import App from './components/app';
 import QuestionList from './containers/questions/questionList';
 import GroupAnswer from './containers/groupAnswer';
 import IndividualAnswer from './containers/individualAnswer';
+import ListCreator from './containers/listCreator';
 
 export default (
   <Route path="/" component={App}>
     <Route path="/group-simulator" component={GroupAnswer} />
     <Route path="/individual-simulator" component={IndividualAnswer} />
+    <Route path="/create-list" component={ListCreator} />
   </Route>
 );
