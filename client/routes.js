@@ -15,7 +15,6 @@ import ListCreator from './containers/listCreator';
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={QuestionList} />
     <Route path="/group-simulator" component={GroupAnswer} />
     <Route path="/individual-simulator" component={IndividualAnswer} />
     <Route path="/create-list" component={ListCreator} />
