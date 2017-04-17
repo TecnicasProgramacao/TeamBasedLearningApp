@@ -76,7 +76,7 @@ class ListCreator extends Component {
         </a>
         <Link to={'/'}>
           <div className="waves-effect waves-light btn">
-            Adicionar Questão
+            Adicionar Questões
           </div>
         </Link>
 
