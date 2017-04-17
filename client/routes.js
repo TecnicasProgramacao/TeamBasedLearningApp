@@ -6,16 +6,19 @@
 */
 
 import React from 'react';
-import { Route } from 'react-router';
-
-import QuestionList from './containers/questionList';
-import GroupAnswering from './containers/groupAnswering';
-import IndividualAnswering from './containers/individualAnswering';
+import { Route, IndexRoute } from 'react-router';
+import App from './components/app';
+import QuestionList from './containers/questions/questionList';
+import GroupAnswer from './containers/groupAnswer';
+import IndividualAnswer from './containers/individualAnswer';
+import AvailableQuestions from './containers/availableQuestions';
+import ListCreator from './containers/listCreator';
 
 export default (
-  <Route>
-    <Route path="/" component={QuestionList} />
-    <Route path="/group-simulator" component={GroupAnswering} />
-    <Route path="/individual-simulator" component={IndividualAnswering} />
+  <Route path="/" component={App}>
+    <Route path="/group-simulator" component={GroupAnswer} />
+    <Route path="/individual-simulator" component={IndividualAnswer} />
+    <Route path="/available-questions" component={AvailableQuestions} />
+    <Route path="/create-list" component={ListCreator} />
   </Route>
 );
